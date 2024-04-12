@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Double/Triple Calculator</title>
+</head>
+<body>
+    <h1>Double/Triple App</h1>
+
+    <form id="doubleForm" onsubmit="handleDouble(event)">
+        <label for="twoTimesInput">Enter a number to double:</label>
+        <input type="number" id="twoTimesInput" required>
+        <button type="submit">Double</button>
+    </form>
+
+    <form id="tripleForm" onsubmit="handleTriple(event)">
+        <label for="threeTimesInput">Enter a number to triple:</label>
+        <input type="number" id="threeTimesInput" required>
+        <button type="submit">Triple</button>
+    </form>
+
+    <div id="result">
+        <!-- Result will be displayed here -->
+    </div>
+
+    <script>
+        async function handleDouble(event) {
+            event.preventDefault();
+            const number = parseFloat(document.getElementById('twoTimesInput').value);
+            if (!isNaN(number)) {
+                const result = number * 2;
+                document.getElementById('result').textContent = `Result: ${result}`;
+            } else {
+                alert('Please enter a valid number.');
+            }
+        }
+
+        async function handleTriple(event) {
+            event.preventDefault();
+            const number = parseFloat(document.getElementById('threeTimesInput').value);
+            if (!isNaN(number)) {
+                const result = number * 3;
+                document.getElementById('result').textContent = `Result: ${result}`;
+            } else {
+                alert('Please enter a valid number.');
+            }
+        }
+    </script>
+</body>
+</html>
